@@ -59,7 +59,7 @@ export function SocialMedia() {
       </div>
 
       <div className="flex items-center justify-center md:py-20 py-10 md:gap-10 gap-5">
-        <a href="#" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-pink-500">
+        <a href="https://www.instagram.com/novaspinc/" target='_blank' rel="noreferrer" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-pink-500">
           <picture>
             <FaInstagram
               className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150"
@@ -67,7 +67,7 @@ export function SocialMedia() {
           </picture>
         </a>
 
-        <a href="#" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-blue-500">
+        <a href="https://www.linkedin.com/company/nova-sp-inc/" target='_blank' rel="noreferrer" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-blue-500">
           <picture>
             <TfiLinkedin
               className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150"
@@ -75,7 +75,7 @@ export function SocialMedia() {
           </picture>
         </a>
 
-        <a href="#" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-blue-600">
+        <a href="https://www.facebook.com/novaspinc/" target='_blank' rel="noreferrer" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-blue-600">
           <picture>
             <FaFacebook
               className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150"
@@ -83,7 +83,7 @@ export function SocialMedia() {
           </picture>
         </a>
 
-        <a href="#" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-black">
+        <a href="#" target='_blank' rel="noreferrer" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-black">
           <picture>
             <FaTiktok
               className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150"

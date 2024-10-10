@@ -25,6 +25,7 @@ const config: Config = {
           500: "#D300C8",
         },
         red: {
+          200: '#EDE6E6',
           300: "#F5EFEF",
         },
       },

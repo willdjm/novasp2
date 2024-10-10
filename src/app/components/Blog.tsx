@@ -35,15 +35,15 @@ export function Blog() {
           <h3 className="text-amber-600 text-3xl md:text-5xl font-semibold">
             Blog <span className="text-blue-950 text-base font-bold md:text-4xl uppercase">NOVA SP INC</span>
           </h3>
-          <button className="bg-amber-600 text-white py-1 px-6 rounded-lg hidden md:flex">
+          <a href="#" className="bg-amber-600 text-white py-1 px-6 rounded-lg hidden md:flex">
             Acesse o Blog
-          </button>
+          </a>
         </div>
 
         {/* Container para cards no desktop */}
         <div className="hidden md:flex gap-4 w-full justify-between rounded">
           {cards.map((card, index) => (
-            <div key={index} className="max-w-xs cursor-pointer bg-white p-2 shadow-lg border">
+            <div key={index} className="max-w-xs cursor-pointer bg-white p-2 shadow-lg border border-gray-200">
               <picture>
                 <img className="w-full object-cover object-center" src={card.img} alt="product" />
               </picture>
@@ -74,7 +74,7 @@ export function Blog() {
           >
             {cards.map((card, index) => (
               <SwiperSlide key={index} className="flex-shrink-0">
-                <div className="max-w-xs cursor-pointer bg-white p-2 shadow">
+                <div className="max-w-xs cursor-pointer bg-white p-2 shadow-lg border border-gray-200">
                   <picture>
                     <img className="w-full object-cover object-center" src={card.img} alt="product" />
                   </picture>

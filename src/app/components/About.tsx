@@ -21,9 +21,9 @@ export function About() {
               <p className="md:max-w-4xl text-base md:text-xl hidden md:flex">
                 A Nova SP Inc abrange a Imobiliária Nova São Paulo que conta com larga experiência no mercado imobiliário e uma equipe de profissionais altamente qualificados, estamos comprometidos em oferecer as melhores opções de moradia para nossos clientes.
               </p>
-              <button className="bg-amber-600 border text-white py-2 px-6 rounded-md mt-4 flex">
+              <a href="/quem-somos" className="bg-amber-600 border text-white py-2 px-6 rounded-md mt-4 flex">
                 Saiba mais
-              </button>
+              </a>
             </div>
 
             <div className="grid md:grid-cols-4 grid-cols-2 w-full items-center justify-center mt-5 md:pt-16 pt-10 border-t-4 border-amber-600">
