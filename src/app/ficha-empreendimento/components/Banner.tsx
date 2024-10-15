@@ -4,7 +4,7 @@ import { FaChevronRight, FaLocationDot } from "react-icons/fa6";
 
 export const Banner = () => {
     return (
-        <div id="bannerId" className="relative w-full z-30">
+        <div id="bannerId" className="relative w-full z-30 shadow-2xl">
             <picture className="relative w-full h-full">
                 {/* Imagem de desktop */}
                 <img

@@ -2,7 +2,7 @@
 
 import React from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -10,93 +10,53 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
-// Import required modules
-import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
-
-// Array de objetos com informações das imagens
-const images = [
-  { src: '/img-gallery1.webp', alt: 'Imagem 1' },
-  { src: '/img-gallery2.webp', alt: 'Imagem 2' },
-  { src: '/img-gallery3.webp', alt: 'Imagem 3' },
-  { src: '/img-gallery4.webp', alt: 'Imagem 4' },
-  { src: '/img-gallery5.webp', alt: 'Imagem 5' },
-  { src: '/img-gallery6.webp', alt: 'Imagem 6' },
-  { src: '/img-gallery7.webp', alt: 'Imagem 7' },
-  { src: '/img-gallery8.webp', alt: 'Imagem 8' },
-  { src: '/img-gallery9.webp', alt: 'Imagem 9' },
-  { src: '/img-gallery10.webp', alt: 'Imagem 10' },
-  { src: '/img-gallery11.webp', alt: 'Imagem 11' },
-];
-
 export function Gallery() {
   return (
-    <section
-      id="empreendimentos"
-      className="flex flex-col justify-center bg-red-300 items-center md:py-20 py-10 px-4 overflow-hidden"
-    >
-      <div className="flex flex-col items-center justify-center md:gap-8 gap-5 w-full">
-        <h3 className="text-blue-950 text-2xl md:text-5xl font-bold pb-10 w-full md:text-left text-center max-w-6xl">
+<div className='bg-red-300 pt-10 md:pt-0'>
+
+<h3 className="text-blue-950 text-2xl md:text-5xl font-bold md:pb-20 pb-10 w-full md:text-left text-center md:max-w-6xl flex items-center justify-center px-4 md:px-0 bg-red-300 ">
           Galeria de imagens
         </h3>
-
-        {/* slider desktop */}
-        <div className="relative w-screen hidden md:block md:h-[40rem]">
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={0}
-            grabCursor={true}
-            loop={true}
-            freeMode={true}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-            }}
-            modules={[FreeMode, Pagination, Autoplay]}
-            className="mySwiper"
-          >
-            {images.map((image, index) => (
-              <SwiperSlide key={index} className="flex justify-center items-center">
-                <picture >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-screen md:object-cover object-contain md:h-screen"
-                  />
-                </picture>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        {/* slider mobile */}
-        <div className="relative w-full h-full md:hidden block">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={0}
-            grabCursor={true}
-            loop={true}
-            freeMode={true}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-            }}
-            modules={[FreeMode, Pagination, Autoplay]}
-            className="mySwiper"
-          >
-            {images.map((image, index) => (
-              <SwiperSlide key={index} className="flex justify-center items-center">
-                <picture >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className=""
-                  />
-                </picture>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-    </section>
+    
+    <Swiper 
+      watchSlidesProgress={true}
+      breakpoints={{
+        // quando a largura da tela for >= 640px
+        640: {
+          slidesPerView: 1, // mobile
+        },
+        // quando a largura da tela for >= 768px
+        768: {
+          slidesPerView: 3, // desktop
+        },
+      }}
+      loop
+      className="mySwiper"
+    >
+      {[
+        "/img-gallery1.webp",
+        "/img-gallery2.webp",
+        "/img-gallery3.webp",
+        "/img-gallery4.webp",
+        "/img-gallery5.webp",
+        "/img-gallery6.webp",
+        "/img-gallery7.webp",
+        "/img-gallery8.webp",
+        "/img-gallery9.webp",
+        "/img-gallery10.webp",
+        "/img-gallery11.webp"
+      ].map((src, index) => (
+        <SwiperSlide key={index} className='bg-red-300 '>
+          <picture className="flex justify-center">
+            <img
+              src={src}
+              alt={`Gallery image ${index + 1}`}
+              className="w-full md:h-[40rem] h-[25rem] object-cover" // Ajuste a altura aqui
+            />
+          </picture>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    </div>
   );
 }

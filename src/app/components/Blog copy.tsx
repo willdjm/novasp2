@@ -63,39 +63,38 @@ export function Blog() {
           ))}
         </div>
 
-{/* Container para o Swiper no mobile */}
-<div className="md:hidden w-full">
-  <Swiper
-    modules={[Navigation]}
-    spaceBetween={20} // Ajuste aqui
-    slidesPerView={1.3} // Ajuste aqui
-    navigation={false} // Desabilita as setas
-    className="w-full"
-  >
-    {cards.map((card, index) => (
-      <SwiperSlide key={index} className="flex-shrink-0">
-        <div className="max-w-xs cursor-pointer bg-white p-2 shadow-lg border border-gray-200">
-          <picture>
-            <img className="w-full object-cover object-center" src={card.img} alt="product" />
-          </picture>
-          <div>
-            <div className="my-6 flex items-center justify-between px-4">
-              <p>{card.date}</p>
-            </div>
-            <div className="my-6 flex items-center justify-between px-4">
-              <p className="font-bold text-gray-500">{card.title}</p>
-            </div>
-            <div className="my-4 flex items-center justify-between px-4">
-              <BsFillBookmarkHeartFill className="text-2xl" />
-              <a href="#" className="underline">Ler mais</a>
-            </div>
-          </div>
+        {/* Container para o Swiper no mobile */}
+        <div className="md:hidden w-full">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation={false} // Desabilita as setas
+            className="w-full"
+          >
+            {cards.map((card, index) => (
+              <SwiperSlide key={index} className="flex-shrink-0">
+                <div className="max-w-xs cursor-pointer bg-white p-2 shadow-lg border border-gray-200">
+                  <picture>
+                    <img className="w-full object-cover object-center" src={card.img} alt="product" />
+                  </picture>
+                  <div>
+                    <div className="my-6 flex items-center justify-between px-4">
+                      <p>{card.date}</p>
+                    </div>
+                    <div className="my-6 flex items-center justify-between px-4">
+                      <p className="font-bold text-gray-500">{card.title}</p>
+                    </div>
+                    <div className="my-4 flex items-center justify-between px-4">
+                      <BsFillBookmarkHeartFill className="text-2xl" />
+                      <a href="#" className="underline">Ler mais</a>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-</div>
-
 
         <button className="bg-amber-600 text-white py-1 px-4 rounded-md md:hidden flex">
           Acesse o Blog

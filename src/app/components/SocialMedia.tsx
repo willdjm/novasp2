@@ -22,7 +22,8 @@ export function SocialMedia() {
     { src: "./img-instagram3.webp", alt: "Criacao 3" },
   ];
 
-  const slidesPerView = windowWidth < 768 ? 1 : images.length;
+  const slidesPerView = windowWidth < 768 ? 1.2 : images.length; // Use slidesPerView modificado
+  const spaceBetween = windowWidth < 768 ? -20 : 30; // Defina spaceBetween com base na largura da tela
 
   return (
     <section
@@ -36,8 +37,8 @@ export function SocialMedia() {
 
         <div className="relative w-full">
           <Swiper
-            spaceBetween={30}
-            slidesPerView={slidesPerView}
+            spaceBetween={spaceBetween} // Use a variável spaceBetween
+            slidesPerView={slidesPerView} // Use slidesPerView modificado
             grabCursor={windowWidth < 768} // Cursor de arraste somente no mobile
             loop={windowWidth < 768} // Loop somente no mobile
             onSlideChange={() => console.log('slide change')}
@@ -49,7 +50,7 @@ export function SocialMedia() {
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className={`w-full h-auto object-cover ${windowWidth < 768 ? 'max-w-[90%] mx-auto' : ''}`}
+                    className={`w-full h-auto object-cover ${windowWidth < 768 ? 'max-w-[80%] mx-auto' : ''}`}
                   />
                 </picture>
               </SwiperSlide>
@@ -61,33 +62,25 @@ export function SocialMedia() {
       <div className="flex items-center justify-center md:py-20 py-10 md:gap-10 gap-5">
         <a href="https://www.instagram.com/novaspinc/" target='_blank' rel="noreferrer" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-pink-500">
           <picture>
-            <FaInstagram
-              className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150"
-            />
+            <FaInstagram className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150" />
           </picture>
         </a>
 
         <a href="https://www.linkedin.com/company/nova-sp-inc/" target='_blank' rel="noreferrer" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-blue-500">
           <picture>
-            <TfiLinkedin
-              className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150"
-            />
+            <TfiLinkedin className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150" />
           </picture>
         </a>
 
         <a href="https://www.facebook.com/novaspinc/" target='_blank' rel="noreferrer" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-blue-600">
           <picture>
-            <FaFacebook
-              className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150"
-            />
+            <FaFacebook className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150" />
           </picture>
         </a>
 
         <a href="#" target='_blank' rel="noreferrer" className="group relative md:h-20 md:w-20 w-14 h-14 border border-white transition duration-300 flex items-center justify-center hover:rounded-md hover:bg-black">
           <picture>
-            <FaTiktok
-              className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150"
-            />
+            <FaTiktok className="transition text-white text-4xl duration-300 relative z-10 transform group-hover:scale-150" />
           </picture>
         </a>
       </div>

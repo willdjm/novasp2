@@ -21,7 +21,7 @@ export default function Home() {
       <WeBuildDreams />
       <WeBelieve />
       <Contact />
-      <OurVentures title="Veja outros empreendimentos" showNavigation={false} />
+      <OurVentures title="Veja nossos empreendimentos" showNavigation={false} />
       <SeeAlso />
       <Footer />
       <Whatsapp />

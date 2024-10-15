@@ -60,7 +60,15 @@ export const Ficha: React.FC = () => {
                         </div>
                         <div className='flex flex-col items-start justify-center py-5 pr-10 gap-5'>
                             <div>
-                                <p className='text-lg line-through'>De R$ 379,00</p>
+                                <p className="text-lg">
+                                    <span className=" relative">
+                                        De R$ 379,00
+                                        <span
+                                            className="absolute inset-0 border-t-2 border-red-500 transform -rotate-3"
+                                            style={{ top: '50%', left: 0 }}
+                                        />
+                                    </span>
+                                </p>
                             </div>
                             <div>
                                 <p className='text-lg text-amber-600'>A partir de</p>
@@ -121,8 +129,15 @@ export const Ficha: React.FC = () => {
 
                 <div className='flex items-end justify-center pb-10 gap-1 w-full'>
                     <div className='w-full'>
-                        <p className='text-lg line-through'>De R$ 379,00</p>
-                    </div>
+                        <p className="text-lg">
+                            <span className=" relative">
+                                De R$ 379,00
+                                <span
+                                    className="absolute inset-0 border-t-2 border-red-500 transform -rotate-3"
+                                    style={{ top: '50%', left: 0 }}
+                                />
+                            </span>
+                        </p>                    </div>
                     <div className='w-full'>
                         <p className='text-base text-amber-600'>A partir de</p>
                         <p className='text-2xl flex'>R$ <span className='text-4xl'>319,900</span></p>

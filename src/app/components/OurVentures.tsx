@@ -75,34 +75,36 @@ export function OurVentures({ title, showNavigation = false }: OurVenturesProps)
       className="flex flex-col justify-center items-center md:py-20 py-10 px-4"
     >
       <div className="flex flex-col items-center justify-center md:gap-8 gap-5 md:max-w-6xl w-full">
-        <h3 className="text-blue-950 text-2xl md:text-5xl font-bold pb-10 w-full text-left">
+        <h3 className="text-blue-950 text-2xl md:text-5xl font-bold md:pb-10 w-full text-left">
           {title}
         </h3>
 
         <div className="relative w-full overflow-visible">
           <Swiper
-            modules={showNavigation ? [Navigation] : []} // Usa Navigation se showNavigation for true
-            spaceBetween={20}
-            slidesPerView={1}
+            modules={showNavigation ? [Navigation] : []}
+            spaceBetween={isMobile ? -10 : 20}
+            slidesPerView={isMobile ? 1.2 : 3} // Ajuste para mostrar um pouco do próximo card no mobile
             breakpoints={{
               640: {
-                slidesPerView: 1,
+                slidesPerView: 1.2, // Mostra um card inteiro e parte do próximo
+                spaceBetween: isMobile ? -10 : 20,
               },
               768: {
                 slidesPerView: 3,
+                spaceBetween: 20,
               },
             }}
             navigation={showNavigation && !isMobile ? {
               nextEl: '.custom-swiper-button-next',
               prevEl: '.custom-swiper-button-prev',
-            } : false} // Habilita navegação apenas se showNavigation for true e não estiver em mobile
+            } : false}
             loop
             className="w-full"
           >
             {cards.map((card, index) => (
               <SwiperSlide key={index}>
                 <a href="/ficha-empreendimento">
-                  <div className="max-w-xs cursor-pointer bg-white p-2 shadow-md border rounded relative group overflow-hidden">
+                  <div className={`max-w-xs cursor-pointer bg-white p-2 shadow-md border rounded relative group overflow-hidden ${isMobile ? 'scale-90' : ''}`}>
                     <div className="absolute flex items-center justify-center gap-4 h-10 top-4 left-0 text-black text-center z-10">
                       <div className="relative">
                         <picture>
@@ -139,9 +141,9 @@ export function OurVentures({ title, showNavigation = false }: OurVenturesProps)
                             alt="Background"
                           />
                         </picture>
-                        <span className='text-sm mr-2'>24 a 41m </span>
-                        <span className="text-sm border-l-2 pl-2 mr-2"> Studios</span>
-                        <span className="text-sm border-l-2 pl-2 mr-2"> 1 ou 2 Dorms.</span>
+                        <span className='text-sm mr-2'>24 a 41m</span>
+                        <span className="text-sm border-l-2 pl-2 mr-2">Studios</span>
+                        <span className="text-sm border-l-2 pl-2 mr-2">1 ou 2 Dorms.</span>
                       </div>
                       <div className="flex items-center justify-center mb-2">
                         <picture>
@@ -173,7 +175,7 @@ export function OurVentures({ title, showNavigation = false }: OurVenturesProps)
           </Swiper>
         </div>
 
-        <a href="/lista" className="bg-blue-950 text-white py-2 px-6 rounded-lg flex md:mt-10">
+        <a href="/lista" className="bg-blue-950 text-white py-2 px-6 rounded-lg md:flex hidden md:mt-10">
           Ver todos
         </a>
       </div>

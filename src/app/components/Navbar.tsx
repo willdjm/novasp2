@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useRef, useEffect } from 'react';
 import { FaBars, FaTimes, FaChevronDown, FaPhoneAlt, FaWhatsapp, FaChevronRight } from 'react-icons/fa';
@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isHome }) => {
   }, []);
 
   return (
-    <nav className={`p-4 ${isHome ? "bg-transparent" : "bg-white fixed"} w-full z-50`}>
+    <nav className={`p-4 ${isHome ? "bg-transparent" : "bg-white shadow-2xl fixed"} w-full z-50`}>
       <div className="container mx-auto flex justify-between items-center w-full md:max-w-6xl">
         {/* Logo */}
         <div className="flex items-center">
@@ -69,8 +69,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isHome }) => {
             </button>
             {isEmpreendimentosDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white rounded shadow-lg z-20">
-                <a href="/#empreendimentos" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleMenuClick}>NOVA SP INC</a>
-                <a href="/#parceiros" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleMenuClick}>Parceiros</a>
+                <a href="/lista" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleMenuClick}>NOVA SP INC</a>
+                <a href="/lista/#listaparceiros" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleMenuClick}>Parceiros</a>
               </div>
             )}
           </div>
@@ -121,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isHome }) => {
                 <FaChevronRight className='mr-2' />
                 NOVA SP INC
               </a>
-              <a href="/#parceiros" className={`text-${isHome ? "white" : "white"} px-4 py-2 flex`} onClick={handleMenuClick}>
+              <a href="/#empreendimentosParceiros" className={`text-${isHome ? "white" : "white"} px-4 py-2 flex`} onClick={handleMenuClick}>
                 <FaChevronRight className='mr-2' />
                 Parceiros
               </a>
@@ -147,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isHome }) => {
             </div>
           </div>
           <a href="#blog" className={`block ${isHome ? "text-white" : "text-white"} text-lg px-4`} onClick={handleMenuClick}>Blog</a>
-          <a href="#contatoMobile" className={`block ${isHome ? "text-white" : "text-white"} text-lg px-4`} onClick={handleMenuClick}>Fale Conosco</a>
+          <a href="/fale-conosco" className={`block ${isHome ? "text-white" : "text-white"} text-lg px-4`} onClick={handleMenuClick}>Fale Conosco</a>
           <a href='https://wa.me/+5511976312158' target='_blank' rel="noreferrer" className={`text-${isHome ? "white" : "white"} px-4 flex pt-2`} onClick={handleMenuClick}>
             <FaWhatsapp className="mr-2 text-3xl" />
             <p className='text-2xl'>11 <span className=''> 97631-2158 </span></p>

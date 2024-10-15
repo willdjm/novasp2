@@ -30,7 +30,7 @@ export const DivFlutuante: React.FC = () => {
       {isVisible && (
         <section
           id="divflutuante"
-          className="fixed w-full flex flex-col justify-center items-center md:pt-24 pt-20 px-4 bg-blue-950 z-40 border-b-2 border-amber-600"
+          className="fixed w-full flex flex-col justify-center items-center md:pt-24 pt-20 px-4 bg-blue-950 z-40 border-b-2 border-amber-600 shadow-2xl"
         >
           {/* Conteúdo da div */}
           <div className="flex items-center justify-between md:gap-8 gap-1 md:max-w-6xl w-full md:py-1.5">

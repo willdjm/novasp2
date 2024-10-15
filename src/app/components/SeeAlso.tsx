@@ -12,7 +12,7 @@ export function SeeAlso() {
                             <p className="text-blue-950 font-bold md:text-5xl text-2xl">Empreendimentos <span className="text-white"> parceiros</span></p>
                         </div>
                         <div className="flex md:items-center md:justify-center">
-                            <a href='/lista/#listaparceiros' className="bg-blue-950 text-white py-2 px-6 rounded-md uppercase">
+                            <a href='/#empreendimentosParceiros' className="bg-blue-950 text-white py-2 px-6 rounded-md uppercase">
                                 Acessar
                             </a>
                         </div>
